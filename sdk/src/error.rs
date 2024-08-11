@@ -104,7 +104,7 @@ pub enum Error {
     },
 
     /// The COSE signature uses an algorithm that is not supported by this crate.
-    #[error("COSE signature algorithm is not supported")]
+    #[error("COSE signature algorithm is not supported!!!!!")]
     CoseSignatureAlgorithmNotSupported,
 
     #[error("COSE could not find verification key")]
