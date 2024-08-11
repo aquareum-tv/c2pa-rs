@@ -66,6 +66,7 @@ pub(crate) const SHA384_OID: Oid<'static> = oid!(2.16.840 .1 .101 .3 .4 .2 .2);
 pub(crate) const SHA512_OID: Oid<'static> = oid!(2.16.840 .1 .101 .3 .4 .2 .3);
 pub(crate) const SECP521R1_OID: Oid<'static> = oid!(1.3.132 .0 .35);
 pub(crate) const SECP384R1_OID: Oid<'static> = oid!(1.3.132 .0 .34);
+pub(crate) const SECP256K1_OID: Oid<'static> = oid!(1.3.132 .0 .10);
 pub(crate) const PRIME256V1_OID: Oid<'static> = oid!(1.2.840 .10045 .3 .1 .7);
 
 /********************** Supported Validators ***************************************
@@ -300,7 +301,8 @@ pub(crate) fn check_cert(
             // must be one of these named curves
             if !(named_curve_oid == PRIME256V1_OID
                 || named_curve_oid == SECP384R1_OID
-                || named_curve_oid == SECP521R1_OID)
+                || named_curve_oid == SECP521R1_OID
+                || named_curve_oid == SECP256K1_OID)
             {
                 let log_item = log_item!(
                     "Cose_Sign1",
